@@ -1,0 +1,27 @@
+/:  Bus 001.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/10p, 480M
+    ID 1d6b:0002 Linux Foundation 2.0 root hub
+    /sys/bus/usb/devices/usb1  /dev/bus/usb/001/001
+    |__ Port 005: Dev 002, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+        ID 046d:c092 Logitech, Inc. G102/G203 LIGHTSYNC Gaming Mouse
+        /sys/bus/usb/devices/1-5  /dev/bus/usb/001/002
+    |__ Port 005: Dev 002, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+        ID 046d:c092 Logitech, Inc. G102/G203 LIGHTSYNC Gaming Mouse
+        /sys/bus/usb/devices/1-5  /dev/bus/usb/001/002
+    |__ Port 006: Dev 003, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+        ID 534b:1021  
+        /sys/bus/usb/devices/1-6  /dev/bus/usb/001/003
+    |__ Port 006: Dev 003, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+        ID 534b:1021  
+        /sys/bus/usb/devices/1-6  /dev/bus/usb/001/003
+    |__ Port 010: Dev 004, If 0, Class=Wireless, Driver=btusb, 12M
+        ID 8087:0a2a Intel Corp. Bluetooth wireless interface
+        /sys/bus/usb/devices/1-10  /dev/bus/usb/001/004
+    |__ Port 010: Dev 004, If 1, Class=Wireless, Driver=btusb, 12M
+        ID 8087:0a2a Intel Corp. Bluetooth wireless interface
+        /sys/bus/usb/devices/1-10  /dev/bus/usb/001/004
+/:  Bus 002.Port 001: Dev 001, Class=root_hub, Driver=xhci_hcd/4p, 5000M
+    ID 1d6b:0003 Linux Foundation 3.0 root hub
+    /sys/bus/usb/devices/usb2  /dev/bus/usb/002/001
+    |__ Port 002: Dev 002, If 0, Class=Mass Storage, Driver=usb-storage, 5000M
+        ID 090c:1000 Silicon Motion, Inc. - Taiwan (formerly Feiya Technology Corp.) Flash Drive
+        /sys/bus/usb/devices/2-2  /dev/bus/usb/002/002

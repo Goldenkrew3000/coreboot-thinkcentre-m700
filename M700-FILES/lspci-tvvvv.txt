@@ -1,0 +1,11 @@
+-[0000:00]-+-00.0  Intel Corporation Xeon E3-1200 v5/E3-1500 v5/6th Gen Core Processor Host Bridge/DRAM Registers
+           +-02.0  Intel Corporation HD Graphics 530
+           +-14.0  Intel Corporation 100 Series/C230 Series Chipset Family USB 3.0 xHCI Controller
+           +-16.0  Intel Corporation 100 Series/C230 Series Chipset Family MEI Controller #1
+           +-17.0  Intel Corporation Q170/Q150/B150/H170/H110/Z170/CM236 Chipset SATA Controller [AHCI Mode]
+           +-1c.0-[01]----00.0  Realtek Semiconductor Co., Ltd. RTL8111/8168/8211/8411 PCI Express Gigabit Ethernet Controller
+           +-1d.0-[02]----00.0  Intel Corporation Dual Band Wireless-AC 3165 Plus Bluetooth
+           +-1f.0  Intel Corporation H110 Chipset LPC/eSPI Controller
+           +-1f.2  Intel Corporation 100 Series/C230 Series Chipset Family Power Management Controller
+           +-1f.3  Intel Corporation 100 Series/C230 Series Chipset Family HD Audio Controller
+           \-1f.4  Intel Corporation 100 Series/C230 Series Chipset Family SMBus

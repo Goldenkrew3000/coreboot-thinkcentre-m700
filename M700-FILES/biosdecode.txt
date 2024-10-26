@@ -1,0 +1,35 @@
+# biosdecode 3.6
+SMBIOS 3.0 present.
+	Structure Table Length: 4366 bytes
+	Structure Table Address: 0xBD1BA000
+	Number Of Structures: 89
+	Maximum Structure Size: 396 bytes
+SMBIOS 3.0.0 present.
+	Structure Table Maximum Length: 4366 bytes
+	Structure Table 64-bit Address: 0x00000000BD1BA000
+PNP BIOS 1.0 present.
+	Event Notification: Not Supported
+	Real Mode 16-bit Code Address: F000:BC76
+	Real Mode 16-bit Data Address: F000:0000
+	16-bit Protected Mode Code Address: 0x000FBC9E
+	16-bit Protected Mode Data Address: 0x000F0000
+PCI Interrupt Routing 1.0 present.
+	Router Device: 00:1f.0
+	Exclusive IRQs: None
+	Compatible Router: 8086:27b8
+	Device: 00:02, on-board
+	Device: 00:14, on-board
+	Device: 00:16, on-board
+	Device: 00:17, on-board
+	Device: 01:00, slot 32
+	Device: 00:1c, on-board
+	Device: 02:00, slot 40
+	Device: 00:1d, on-board
+	Device: 00:1f, on-board
+Intel Multiprocessor present.
+	Specification Revision: 1.4
+	Configuration Table Address: 0x000FCA40
+	Mode: Virtual Wire
+ACPI present.
+	OEM Identifier: LENOVO
+	RSD Table 32-bit Address: 0xB67EC028
