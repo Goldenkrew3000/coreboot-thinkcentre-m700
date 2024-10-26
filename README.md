@@ -1,6 +1,19 @@
 coreboot README
 ===============
 
+WHAT is going on here!?!?
+=========================
+
+Okay so this is an _attempted_ port of coreboot to the "Lenovo Thinkcentre M700"
+And I say that because it's actually a port to the Lenovo Ideacentre 300-20ISH
+But they both use the same motherboard, "IH110MS"
+The standard M700/M900 Mini coreboot config boots, except the Ethernet, PCIe,
+and SuperIO are not working (which involves Fan PWM).
+Note to self: Got ethernet working by simply updating the PCIe root paths in the device tree
+
+Rest of the README
+==================
+
 coreboot is a Free Software project aimed at replacing the proprietary
 firmware (BIOS/UEFI) found in most computers. coreboot performs the
 required hardware initialization to configure the system, then passes
