@@ -12,7 +12,8 @@ and SuperIO are not working (which involves Fan PWM). <br>
 Everything I can test seems to work fine, although PLEASE USE AT YOUR OWN RISK,
 I DON'T KNOW WHAT I AM DOING. <br>
 P.S. Use the IH110MS_CONFIG as your .config starting base, not the motherboard
-selection.
+selection. <br>
+Note to self: Standard M900 Tiny build runs on the computer, boots windows. This one freezes on actual windows (Not installer), compare builds (Probably ACPI Related?)
 
 Rest of the README
 ==================
