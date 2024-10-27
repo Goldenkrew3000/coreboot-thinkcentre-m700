@@ -17,6 +17,7 @@ smm-$(CONFIG_SUPERIO_ITE_COMMON_GPIO_PRE_RAM) += common/gpio.c
 subdirs-y += it8528e
 subdirs-y += it8613e
 subdirs-y += it8623e
+subdirs-y += it8625e
 subdirs-y += it8629e
 subdirs-y += it8659e
 subdirs-y += it8712f
