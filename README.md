@@ -4,16 +4,11 @@ coreboot README
 WHAT is going on here!?!?
 =========================
 
-Okay so this is an _attempted_ port of coreboot to the "Lenovo Thinkcentre M700"
-And I say that because it's actually a port to the Lenovo Ideacentre 300-20ISH
-But they both use the same motherboard, "IH110MS"
-The standard M700/M900 Mini coreboot config boots, except the Ethernet, PCIe,
-and SuperIO are not working (which involves Fan PWM). <br>
-Everything I can test seems to work fine, although PLEASE USE AT YOUR OWN RISK,
-I DON'T KNOW WHAT I AM DOING. <br>
-P.S. Use the IH110MS_CONFIG as your .config starting base, not the motherboard
-selection. <br>
-Note to self: Standard M900 Tiny build runs on the computer, boots windows. This one freezes on actual windows (Not installer), compare builds (Probably ACPI Related?)
+This is a port of coreboot to the Lenovo IH110MS. <br>
+This board is in multiple Lenovo Prebuilts such as the "Thinkcentre M700" and the "Ideacentre 300-20ISH". <br>
+As I do not have a fullsize M700, the port is based on the Ideacenter, but it should work in both anyway. <br>
+Everything seems to work, even booting Windows 11, but I do not have any PCIe cards to test those slots. <br>
+P.S. Use the IH110MS_CONFIG file instead of just selecting the board, it sets some other important config options.
 
 Rest of the README
 ==================
