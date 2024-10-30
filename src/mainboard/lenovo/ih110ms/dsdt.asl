@@ -7,33 +7,19 @@ DefinitionBlock(
 	ACPI_DSDT_REV_2,
 	OEM_ID,
 	ACPI_TABLE_CREATOR,
-	0x20110725	// OEM revision
+	0x20110725
 )
 {
 	#include <acpi/dsdt_top.asl>
 	#include <soc/intel/common/block/acpi/acpi/platform.asl>
-
-	// global NVS and variables
 	#include <soc/intel/common/block/acpi/acpi/globalnvs.asl>
-
-	// CPU
 	#include <cpu/intel/common/acpi/cpu.asl>
 
-	Scope (\_SB) {
-		Device (PCI0)
-		{
-			/* Image processing unit */
-			#include <soc/intel/skylake/acpi/ipu.asl>
-			#include <soc/intel/skylake/acpi/systemagent.asl>
-			#include <soc/intel/skylake/acpi/pch.asl>
-		}
-
-		// Dynamic Platform Thermal Framework
-		#include "acpi/dptf.asl"
+	Device (\_SB.PCI0) {
+		#include <soc/intel/skylake/acpi/ipu.asl>
+		#include <soc/intel/skylake/acpi/systemagent.asl>
+		#include <soc/intel/skylake/acpi/pch.asl>
 	}
 
 	#include <southbridge/intel/common/acpi/sleepstates.asl>
-
-	// Mainboard specific
-	#include "acpi/mainboard.asl"
 }

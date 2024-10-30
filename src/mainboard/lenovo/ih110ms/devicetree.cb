@@ -1,29 +1,20 @@
 ## SPDX-License-Identifier: GPL-2.0-only
 
 chip soc/intel/skylake
-	# Enable s0ix
-	register "s0ix_enable" = "1"
-
 	# Enable deep Sx states
 	register "deep_s5_enable_ac" = "1"
 	register "deep_s5_enable_dc" = "1"
 	register "deep_sx_config" = "DSX_EN_LAN_WAKE_PIN | DSX_EN_WAKE_PIN"
 
-	register "eist_enable" = "1"
+	register "eist_enable" = "true"
 
 	# GPE configuration
 	# Note that GPE events called out in ASL code rely on this
 	# route. i.e. If this route changes then the affected GPE
 	# offset bits also need to be changed.
-	register "gpe0_dw0" = "GPD"
+	register "gpe0_dw0" = "GPP_G"
 	register "gpe0_dw1" = "GPP_D"
 	register "gpe0_dw2" = "GPP_E"
-
-	# Enable DPTF
-	register "dptf_enable" = "1"
-
-	# FSP Configuration
-	register "PrimaryDisplay" = "Display_iGFX"
 
 	# Enabling SLP_S3#, SLP_S4#, SLP_SUS and SLP_A Stretch
 	# SLP_S3 Minimum Assertion Width. Values 0: 60us, 1: 1ms, 2: 50ms, 3: 2s
@@ -41,6 +32,10 @@ chip soc/intel/skylake
 	# PL2 override 91W
 	register "power_limits_config" = "{
 		.tdp_pl2_override = 91,
+	}"
+
+	register "SerialIoDevMode" = "{
+		[PchSerialIoIndexUart2] = PchSerialIoSkipInit, // LPSS UART
 	}"
 
 	# Send an extra VR mailbox command for the PS4 exit issue
@@ -176,45 +171,17 @@ chip soc/intel/skylake
 					register "TMPIN1.mode"		= "THERMAL_DIODE" # EXT_SYS_TEMP
 					register "TMPIN3.mode"		= "THERMAL_DIODE" # VR_TEMP_DA
 
-					#register "TEMP1.max"	= "32"
-					#register "TEMP2.offset"	= "100"
-					#register "TEMP3.max"	= "90"
-					#register "TEMP4.max"	= "32"
-					#register "TEMP5.offset"	= "100"
-					#register "TEMP6.max"	= "90"
+					register "FAN1.mode" = "FAN_SMART_AUTOMATIC"
+					register "FAN1.smart.tmpin" = "1"
 
-					#register "TEMP1.source"	= "THERMAL_SOURCE_TMPIN1"
-					#register "TEMP2.source"	= "THERMAL_SOURCE_PECI1"
-					#register "TEMP3.source"	= "THERMAL_SOURCE_TMPIN3"
-					#register "TEMP4.source"	= "THERMAL_SOURCE_TMPIN1"
-					#register "TEMP5.source"	= "THERMAL_SOURCE_PECI1"
-					#register "TEMP6.source"	= "THERMAL_SOURCE_TMPIN3"
-
-					register "FAN1.mode" = "FAN_MODE_OFF"
-
-					register "FAN2.mode" = "FAN_SMART_AUTOMATIC"
-					register "FAN2.smart.tmpin"	= "2"
-					register "FAN2.smart.tmp_off"	= "0"
-					register "FAN2.smart.tmp_start"	= "40"
-					register "FAN2.smart.tmp_full"	= "90"
-					register "FAN2.smart.tmp_delta"	= "2"
-					register "FAN2.smart.full_lmt"	= "0"
-					register "FAN2.smart.smoothing"	= "0"
-					register "FAN2.smart.clsd_loop"	= "0"
-					register "FAN2.smart.pwm_start"	= "48"
-					register "FAN2.smart.slope"	= "0x20"
+					register "FAN2.mode" = "FAN_SMART_AUTOMATIC" # CPU FAN
+					register "FAN2.smart.tmpin" = "2"
 
 					register "FAN3.mode" = "FAN_SMART_AUTOMATIC"
-					register "FAN3.smart.tmpin"	= "2"
-					register "FAN3.smart.tmp_off"	= "0"
-					register "FAN3.smart.tmp_start"	= "40"
-					register "FAN3.smart.tmp_full"	= "90"
-					register "FAN3.smart.tmp_delta"	= "2"
-					register "FAN3.smart.full_lmt"	= "0"
-					register "FAN3.smart.smoothing"	= "0"
-					register "FAN3.smart.clsd_loop"	= "0"
-					register "FAN3.smart.pwm_start"	= "48"
-					register "FAN3.smart.slope"	= "0x20"
+					register "FAN3.smart.tmpin" = "3"
+
+					register "FAN4.mode" = "FAN_SMART_AUTOMATIC"
+					register "FAN4.smart.tmpin" = "4"
 
 					register "ec.vin_mask" = "VIN_ALL"
 				device pnp 2e.1 on		# COM1 (internal header)

@@ -2,9 +2,9 @@
 
 #include <assert.h>
 #include <soc/romstage.h>
+#include <spd_bin.h>
 #include <stdint.h>
 #include <string.h>
-#include <spd_bin.h>
 
 void mainboard_memory_init_params(FSPM_UPD *mupd)
 {

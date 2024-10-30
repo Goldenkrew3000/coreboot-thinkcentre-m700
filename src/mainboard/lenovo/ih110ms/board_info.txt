@@ -1,5 +1,5 @@
 Category: desktop
-Board URL: TODO
+Board URL: https://psref.lenovo.com/Product/ThinkCentre_M900_Tiny
 ROM package: SOIC-8
 ROM protocol: SPI
 ROM socketed: n

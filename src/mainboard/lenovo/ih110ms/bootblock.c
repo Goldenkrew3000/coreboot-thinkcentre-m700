@@ -1,30 +1,14 @@
 /* SPDX-License-Identifier: GPL-2.0-only */
 
 #include <bootblock_common.h>
+#include <device/pnp_ops.h>
+#include <mainboard/gpio.h>
+#include <soc/gpio.h>
 #include <superio/ite/common/ite.h>
 #include <superio/ite/it8625e/it8625e.h>
-#include <soc/gpio.h>
-#include "include/gpio.h"
 
-#define GPIO_DEV PNP_DEV(0x2e, IT8625E_GPIO)
-
-#if CONFIG_UART_FOR_CONSOLE == 0
 #define SERIAL_DEV PNP_DEV(0x2e, IT8625E_SP1)
-#elif CONFIG_UART_FOR_CONSOLE == 1
-#define SERIAL_DEV PNP_DEV(0x2e, IT8625E_SP2)
-#else
-#error "Invalid value for CONFIG_UART_FOR_CONSOLE"
-#endif
-
-static void early_config_gpio(void)
-{
-	gpio_configure_pads(early_gpio_table, ARRAY_SIZE(early_gpio_table));
-}
-
-void bootblock_mainboard_init(void)
-{
-	early_config_gpio();
-}
+#define GPIO_DEV PNP_DEV(0x2e, IT8625E_GPIO)
 
 void bootblock_mainboard_early_init(void)
 {
@@ -47,6 +31,6 @@ void bootblock_mainboard_early_init(void)
 	ite_reg_write(GPIO_DEV, 0xf1, 0x41);
 	ite_reg_write(GPIO_DEV, 0xf4, 0x0c);
 
-	/* Enable early serial console */
+	/* Enable serial */
 	ite_enable_serial(SERIAL_DEV, CONFIG_TTYS0_BASE);
 }

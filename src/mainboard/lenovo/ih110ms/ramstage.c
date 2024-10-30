@@ -1,13 +1,17 @@
 /* SPDX-License-Identifier: GPL-2.0-only */
 
+#include <console/console.h>
+#include <device/device.h>
+#include <drivers/intel/gma/int15.h>
+#include <gpio.h>
+#include <mainboard/gpio.h>
 #include <soc/ramstage.h>
-#include "include/gpio.h"
 
-void mainboard_silicon_init_params(FSP_SIL_UPD *params)
+static void mainboard_enable(struct device *dev)
 {
-	/* Configure pads prior to SiliconInit() in case there's any
-	 * dependencies during hardware initialization. */
-	gpio_configure_pads(gpio_table, ARRAY_SIZE(gpio_table));
-
-	params->CdClock = 3;
+	mainboard_configure_gpios();
 }
+
+struct chip_operations mainboard_ops = {
+	.enable_dev = mainboard_enable,
+};
